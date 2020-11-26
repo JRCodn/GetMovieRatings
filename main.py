@@ -1,7 +1,7 @@
 import bs4
 import requests
 from bs4 import BeautifulSoup
-text = input("test: ")
+text = input("Type in move: ")
 
 # simple web scraper to get movie ratings
 
@@ -12,6 +12,6 @@ if res.status_code == 200:
     soup = bs4.BeautifulSoup(res.text,'html.parser')
 
 
-    test = soup.find_all(class_="BNeawe s3v9rd AP7Wnd")[0].text
+    movie_rating = soup.find_all(class_="BNeawe s3v9rd AP7Wnd")[0].text
 
-print(test)
+print(movie_rating)
